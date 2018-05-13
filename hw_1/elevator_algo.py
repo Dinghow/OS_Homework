@@ -35,15 +35,18 @@ class Elevator(object):
             self.status = 1
 
     def update_destination(self, floor):
+        # if the distance between new request and current floor is further than that now,update the destination value
         if abs(floor - self.current_floor) > abs(self.destination - self.current_floor):
             self.destination = floor
 
     def check_internal(self, floor):
+        # if the direction of new internal request is opposite of elevator direction,the request won't be responded
         i_direction = (floor - self.current_floor)/abs(floor - self.current_floor)
         if i_direction*self.direction < 0:
             return False
         return True
 
+    # Judge whether to open the door at each floor
     def check_open(self):
         if self.internal_request[int(self.current_floor - 1)] == 1:
             time.sleep(0.5)
@@ -156,6 +159,7 @@ class Controller(object):
         else:
             distance[4] = 100
 
+        # Find the minimum distance
         min_dis = min(distance)
         if min_dis == 100:
             return False
@@ -174,6 +178,7 @@ class Controller(object):
             return True
 
     def find_vacant(self, floor, direction):
+        # Based on numerical order,find the first vacant elevator
         if self.elevator1.status == 0:
             self.elevator1.set_external(floor, direction)
             self.elevator1.status = 1
@@ -203,6 +208,7 @@ class Controller(object):
             return False
 
     def find_rotate(self, floor, direction):
+        # Use round-robin schedule
         if self.elevator1.isRotated == 0:
             self.elevator1.isRotated = 1
             self.elevator1.rotateDes = floor

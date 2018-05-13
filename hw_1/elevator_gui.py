@@ -1661,6 +1661,8 @@ class Ui_Elevator_schedule(object):
 
     def band_up19(self):
         controller.dispatch(1, 0, 19, 1)
+
+    # Confirm widgets' status be the same as that of elevators
     def status_monitor(self):
         while True:
             # elevator1 internal display
