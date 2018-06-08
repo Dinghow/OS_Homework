@@ -2,3 +2,4 @@
 
 - Elevator schedule
 
+- Memory management:page replacement
