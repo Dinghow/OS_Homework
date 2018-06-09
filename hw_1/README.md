@@ -58,9 +58,17 @@
 2. 空闲状态的电梯
 3. 所有电梯都处在工作状态且不满足1时，根据轮转调度法来处理请求
 
+活动图如下：
+
+![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/external_request_AD.png)
+
 ### 3.2 内部请求响应算法
 
 用户发出内部请求后，首先要检测其是否满足当前电梯运行状况，若目标楼层表示的方向与当前运动方向相反，则忽略该请求，当电梯状态为空闲后，则可以响应任何内部请求（如在7楼发出向下请求，某电梯从10楼到1楼途中响应了该请求，该用户在下降途中若发出前往楼8的请求不会被响应，到达1楼后则可以发出该请求）
+
+活动图如下：
+
+![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/internal_request_AD.png)
 
 ### 3.3 响应队列的处理算法
 
@@ -351,7 +359,62 @@ class Controller(object):
     t4.start()
     t5.start()
 ```
-## 5. 开发环境
+
+
+
+## 5.程序演示
+
+### 5.1 界面说明
+
+![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/gui_1.png)
+
+左侧区域为电梯1-5内部面板，按钮分别表示发出1-20层的内部请求，数字控件显示当前楼层
+
+右侧区域的左半部分为1-20成发出向上、向下外部请求的按钮，右半部分表示5部电梯的运行状况
+
+### 5.2 功能演示
+
+#### 5.2.1 外部请求响应
+
+1. 优先响应顺路的情况（将电梯1置于15层，发出前往1楼的内部请求，同时在5楼发出向下请求，可以看到由电梯1进行响应，其余电梯保持空闲状态）：
+
+![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/gui_4.png)
+
+2. 无顺路电梯则调用空闲电梯（楼层15、16发出向下请求，电梯1、2分别对其响应）：
+
+   ![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/gui_5.png)
+
+3. 所有电梯均在运行，且不满足顺路条件，采用轮转调度法（电梯1-5均在向下运动，此时高楼层发出向上请求，则首先轮转至电梯1响应，将该请求加入等待队列，运行至目的地后再上行响应用户请求）
+
+   ![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/gui_6.png)
+
+   ![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/gui_7.png)
+
+   
+
+#### 5.2.2 内部请求响应
+
+   运动状态下可以响应同方向的任意请求
+
+![](https://github.com/Dinghow/OS_Homework/tree/master/hw_1/img/gui_8.png)
+
+​	空闲状态下可以响应所有请求：
+
+​	![](G:\coding\Python\elevator\img\gui_9.png)
+
+## 6.附录
+
+### 6.1 文件说明：
+
+`eleavtor_algo.py`为调度算法的核心python代码
+
+`elevator_gui.py`为调度算法的gui代码
+
+`elevator_gui.exe`为生成的可执行文件
+
+**由于python环境问题，exe文件运行并不稳定（使用pyinstaller生成），所以使用时建议执行**`elevator_gui.py`，所需环境为：`PyQt5`
+
+### 6.2 开发环境
 
 - 操作系统：windows10 1803 64bit
 - 语言：python 3.6
