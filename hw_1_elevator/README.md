@@ -60,7 +60,7 @@
 
 活动图如下：
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/external_request_AD.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/external_request_AD.png)
 
 ### 3.2 内部请求响应算法
 
@@ -68,7 +68,7 @@
 
 活动图如下：
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/internal_request_AD.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/internal_request_AD.png)
 
 ### 3.3 响应队列的处理算法
 
@@ -366,7 +366,7 @@ class Controller(object):
 
 ### 5.1 界面说明
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/gui_1.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/gui_1.png)
 
 左侧区域为电梯1-5内部面板，按钮分别表示发出1-20层的内部请求，数字控件显示当前楼层
 
@@ -378,17 +378,17 @@ class Controller(object):
 
 1. 优先响应顺路的情况（将电梯1置于15层，发出前往1楼的内部请求，同时在5楼发出向下请求，可以看到由电梯1进行响应，其余电梯保持空闲状态）：
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/gui_4.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/gui_4.png)
 
 2. 无顺路电梯则调用空闲电梯（楼层15、16发出向下请求，电梯1、2分别对其响应）：
 
-   ![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/gui_5.png)
+   ![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/gui_5.png)
 
 3. 所有电梯均在运行，且不满足顺路条件，采用轮转调度法（电梯1-5均在向下运动，此时高楼层发出向上请求，则首先轮转至电梯1响应，将该请求加入等待队列，运行至目的地后再上行响应用户请求）
 
-   ![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/gui_6.png)
+   ![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/gui_6.png)
 
-   ![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/gui_7.png)
+   ![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/gui_7.png)
 
    
 
@@ -396,11 +396,11 @@ class Controller(object):
 
    运动状态下可以响应同方向的任意请求
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/gui_8.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/gui_8.png)
 
 ​	空闲状态下可以响应所有请求：
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1/img/gui_9.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_1_elevator/img/gui_9.png)
 
 ## 6.附录
 

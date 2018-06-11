@@ -78,7 +78,7 @@ FIFO算法即先进先出算法，即当发生页面置换的时候，最先进�
 
 算法思路如下：
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2/img/1.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2_memory_management/img/1.png)
 
 ### 3.3 LRU算法
 
@@ -86,7 +86,7 @@ LRU算法即最近最久未使用算法，即当发生页面置换的时候，�
 
 算法思路如下：
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2/img/2.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2_memory_management/img/2.png)
 
 
 
@@ -201,7 +201,7 @@ class Simulator:
 
 ### 5.1 界面说明
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2/img/3.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2_memory_management/img/3.png)
 
 - 最上方一排为四个内存块，数字内容为块内页号
 - 中部为缺页次数和缺页率
@@ -212,7 +212,7 @@ class Simulator:
 
 单击`Generate List`按照访问序列的生成要求随机生成，同时生成对应页号序列，每一次点击`Generate List`，块内各项信息会重置，即重新开始模拟过程
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2/img/4.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2_memory_management/img/4.png)
 
 
 
@@ -220,7 +220,7 @@ class Simulator:
 
 首先选择FIFO或者LRU算法（只能二选一），点击`Single Step`单步执行，点击`Execution to End`执行到最后一条指令：
 
-![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2/img/5.png)
+![](https://github.com/Dinghow/OS_Homework/raw/master/hw_2_memory_management/img/5.png)
 
 ## 6.附录
 
