@@ -1,0 +1,9 @@
+G:\coding\C#\file_system\file_system\file_system\obj\Debug\file_system.csprojResolveAssemblyReference.cache
+G:\coding\C#\file_system\file_system\file_system\obj\Debug\file_system.MainWindows.resources
+G:\coding\C#\file_system\file_system\file_system\obj\Debug\file_system.Properties.Resources.resources
+G:\coding\C#\file_system\file_system\file_system\obj\Debug\file_system.csproj.GenerateResource.Cache
+G:\coding\C#\file_system\file_system\file_system\bin\Debug\file_system.exe.config
+G:\coding\C#\file_system\file_system\file_system\bin\Debug\file_system.exe
+G:\coding\C#\file_system\file_system\file_system\bin\Debug\file_system.pdb
+G:\coding\C#\file_system\file_system\file_system\obj\Debug\file_system.exe
+G:\coding\C#\file_system\file_system\file_system\obj\Debug\file_system.pdb
