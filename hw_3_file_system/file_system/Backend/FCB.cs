@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace file_system.Backend
+namespace file_system
 {
+    //File Control Block
+    [Serializable]
     public class FCB
     {
         public enum FileType { folder, txt };
@@ -48,9 +50,16 @@ namespace file_system.Backend
             }
         }
 
-        public FCB copy()
+        public void remove()
         {
-
+            if(father != null)
+            {
+                father.son = next;
+            }
+            else if (pre != null)
+            {
+                pre.next = next;
+            }
         }
     }
 }

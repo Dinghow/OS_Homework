@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace file_system.Backend
+namespace file_system
 {
+    [Serializable]
     public class Catalog
     {
-        private Dictionary<int, File> file_table = new Dictionary<int, File>();
-        private Dictionary<int, FCB> fcb_table = new Dictionary<int, FCB>();
+        public Dictionary<int, File> file_table = new Dictionary<int, File>();
+        public Dictionary<int, FCB> fcb_table = new Dictionary<int, FCB>();
 
         public void map(FCB item,File file)
         {
@@ -22,6 +23,16 @@ namespace file_system.Backend
             if (fcb_table.ContainsKey(item.filePointer))
             {
                 return file_table[item.filePointer];
+            }
+            else
+                return null;
+        }
+
+        public File getFile(int filePointer)
+        {
+            if (fcb_table.ContainsKey(filePointer))
+            {
+                return file_table[filePointer];
             }
             else
                 return null;
