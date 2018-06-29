@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace file_system
 {
+    // FCB catalog
     [Serializable]
     public class Catalog
     {
